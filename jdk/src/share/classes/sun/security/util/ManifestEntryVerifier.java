@@ -76,6 +76,18 @@ public class ManifestEntryVerifier {
     /**
      * Create a new ManifestEntryVerifier object.
      */
+    public ManifestEntryVerifier(Manifest man)
+    {
+        createdDigests = new HashMap<String, MessageDigest>(11);
+        digests = new ArrayList<MessageDigest>();
+        manifestHashes = new ArrayList<byte[]>();
+        this.manifestFileName = "default_name";
+        this.man = man;
+    }
+
+    /**
+     * Create a new ManifestEntryVerifier object.
+     */
     public ManifestEntryVerifier(Manifest man, String manifestFileName)
     {
         createdDigests = new HashMap<String, MessageDigest>(11);
